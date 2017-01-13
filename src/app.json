@@ -1,0 +1,27 @@
+{
+   "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/components/scrollView/scrollView",
+    "pages/components/swiperView/swiperView",
+    "pages/components/base/base",
+    "pages/components/form/form",
+    "pages/components/medium/medium"
+  ],
+  "window":{
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "TestDemo",
+    "navigationBarBackgroundColor": "#33CCCC",
+    "backgroundColor": "#999999",
+    "backgroundTextStyle":"dark",
+    "enablePullDownRefresh": true
+  },
+
+  "networkTimeout": {
+    "request": 30000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
