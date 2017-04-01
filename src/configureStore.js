@@ -1,12 +1,12 @@
-import { createStore, applyMiddleware, compose } from './vendors/redux.js';
-import thunk from './vendors/redux-thunk';
-import createLogger from './vendors/redux-logger.js';
+import { createStore, applyMiddleware, compose } from './vendors/redux'
+import thunk from './vendors/redux-thunk'
+import createLogger from './vendors/redux-logger'
 
-import rootReducer from './pages/reducers.js'
+import rootReducer from './pages/reducers'
 
 const finalCreateStore = compose(
-  applyMiddleware(thunk),
-  applyMiddleware(createLogger())
+    applyMiddleware(thunk),
+    applyMiddleware(createLogger()),
 )(createStore)
 
 function configureStore(initialState) {

@@ -1,5 +1,6 @@
 # 微信小程序模板
 
+[weapp-boilerplate](https://github.com/zce/weapp-boilerplate)
 
 ## 模板介绍
 - 集成了`Redux`，数据管理更方便
@@ -70,4 +71,4 @@ Page(pageConfig);
 该模板参考并借鉴了以下两个开源项目，特此感谢！
 
 [weapp-boilerplate](https://github.com/zce/weapp-boilerplate)
-[wechat-weapp-redux](https://github.com/charleyw/wechat-weapp-redux)"# wxapp-template" 
+[wechat-weapp-redux](https://github.com/charleyw/wechat-weapp-redux)"# wxapp-template"

@@ -1,59 +1,58 @@
-import { Provider } from './vendors/wechat-weapp-redux.js'
-import store from './configureStore.js'
+import { Provider } from './vendors/wechat-weapp-redux'
+import store from './configureStore'
 
 const appConfig = {
-    onLaunch: function () {
-        var logs = wx.getStorageSync('logs') || []
+    onLaunch: () => {
+        const logs = wx.getStorageSync('logs') || []
         logs.unshift(Date.now())
         wx.setStorageSync('logs', logs)
         console.log('onLaunch~~~~~~~')
     },
-    onShow: function(){
+    onShow: () => {
         console.log('onShow~~~~~~~~')
-        this.testFunction()
+        appConfig.testFunction()
     },
-    onHide: function() {
+    onHide: () => {
         console.log('onHide~~~~~~~')
     },
-    onReady: function() {
+    onReady: () => {
         console.log('onReady~~~~~~')
     },
-    testFunction: function() {
+    testFunction: () => {
         console.log('test Function()')
     },
-    getUserInfo:function(cb){
-        var that = this
-        if(this.globalData.userInfo) {
-            typeof cb == "function" && cb(this.globalData.userInfo)
+    getUserInfo: (cb) => {
+        if (appConfig.globalData.userInfo) {
+            typeof cb === 'function' && cb(appConfig.globalData.userInfo)
         } else {
             wx.login({
-                success: function () {
+                success: () => {
                     wx.getUserInfo({
-                        success: function (res) {
-                            that.globalData.userInfo = res.userInfo
-                            typeof cb == "function" && cb(that.globalData.userInfo)
-                        }
+                        success: res => {
+                            appConfig.globalData.userInfo = res.userInfo
+                            typeof cb === 'function' && cb(appConfig.globalData.userInfo)
+                        },
                     })
-                }
+                },
             })
         }
     },
-    globalData:{
-        userInfo:null
+    globalData: {
+        userInfo: null,
     },
-    onPullDownRefresh: function() {
+    onPullDownRefresh: () => {
         console.log('onPullDownRefresh~~~')
     },
-    onReachBottom: function() {
+    onReachBottom: () => {
         console.log('onReachBottom~~~')
     },
-    onShareAppMessage: function () {
+    onShareAppMessage: () => {
         return {
             title: '自定义分享标题',
             desc: '自定义分享描述',
-            path: '/page/user?id=123'
+            path: '/page/user?id=123',
         }
-    }
+    },
 }
 
 App(Provider(store)(appConfig))
